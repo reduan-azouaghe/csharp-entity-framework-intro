@@ -32,9 +32,9 @@ namespace ef.intro.wwwapi.EndPoint
             {
                 return await Task.Run(() =>
                 {
-                    var person = service.GetAllBooks().Where(x => x.Id == id).FirstOrDefault();
-                    if (person == null) return Results.NotFound();
-                    return Results.Ok(person);
+                     var book = service.GetBook(id);
+                    if (book == null) return Results.NotFound();
+                    return Results.Ok(book);
                 });
 
             }
