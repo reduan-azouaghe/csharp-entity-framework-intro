@@ -19,9 +19,9 @@ Add a Publisher Model with propertyies Id(int) and Name(string),  a PublisherCon
 otherwise create in the usual way in the Controllers folder.), update ILibraryRepository,  LibraryRepository and LibraryContext  
 and any other place you feel relevant to wire in the Publisher into the project.  Don't forget to link the Publisher by Id as a foreign key to the Book object (decorate accordingly!).
 
-In the Seed class populate the db by using the context class (hopefully you added a  new Publisher DbSet of the Context) with some test data.  You can call the 
+In the Seed class populate the db by using the context class (hopefully you added a new Publisher DbSet in the Context) with some test data.  You can call the 
 GeneratePublisherName() to generate a name or make up your own version of this.  As each publisher is added to the book object you should populate before the book 
-population code, then randomly create a publisher for a book (tip.. use a similar approach to the book.AuthorId = authors[authorRandom.Next(authors.Count)].Id;)
+population code, then randomly create a publisher for a book (tip.. use a similar approach to the book.AuthorId = authors[authorRandom.Next(authors.Count)].Id);)
 
 
 
