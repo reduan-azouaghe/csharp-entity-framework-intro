@@ -34,7 +34,7 @@ namespace ef.intro.wwwapi.EndPoint
             {
                 return await Task.Run(() =>
                 {
-                    var person = service.GetAllAuthors().Where(x => x.Id == id).FirstOrDefault();
+                    var person = service.GetAuthor(id);
                     if (person == null) return Results.NotFound();
                     return Results.Ok(person);
                 });
