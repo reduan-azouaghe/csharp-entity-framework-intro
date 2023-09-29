@@ -9,18 +9,14 @@
 		  extension method.  See also how the data is populated via the Seed() method call.  Note how we are 
 		  randomly generating names of both authors & books!
 
-## Exercise   
+## Core and Extension are combined into the following requirements
 
-Complete the LibraryRepository.cs.  Finish all methods, replacing "throw new NotImplementedException();" with 
-   relevant C# Entity Framework code by using the LibraryContext.  
-
-## Extension    
-Add a Publisher Model with propertyies Id(int) and Name(string),  a PublisherController (if you can create in a similar way to AuthorApi.cs/BookApi.cs then great!   
-otherwise create in the usual way in the Controllers folder.), update ILibraryRepository,  LibraryRepository and LibraryContext  
-and any other place you feel relevant to wire in the Publisher into the project.  Don't forget to link the Publisher by Id as a foreign key to the Book object (decorate accordingly!).
-
-In the Seed class populate the db by using the context class (hopefully you added a new Publisher DbSet in the Context) with some test data.  You can call the 
-GeneratePublisherName() to generate a name or make up your own version of this.  As each publisher is added to the book object you should populate before the book 
+-Complete the LibraryRepository.cs.  Finish all methods, replacing "throw new NotImplementedException();" with relevant C# Entity Framework code by using the LibraryContext.  
+-Add a Publisher Model with properties Id(int) and Name(string)  
+-Add a controller for the Publisher.  Create in a similar way to AuthorApi.cs/BookApi.cs using the minimal api approach.
+-update ILibraryRepository,  LibraryRepository and LibraryContext and any other place you feel relevant to wire in the Publisher into the project.  Don't forget to link the Publisher by Id as a foreign key on the Book object (decorate accordingly!).
+-In the Seed class populate the db by using the context class (hopefully you added a new Publisher DbSet in the Context).  You can call the 
+GeneratePublisherName() to generate a name or make up your own version of this.  As each publisher is added to the book object you should populate BEFORE the book 
 population code, then randomly create a publisher for a book (tip.. use a similar approach to the book.AuthorId = authors[authorRandom.Next(authors.Count)].Id);)
 
 
