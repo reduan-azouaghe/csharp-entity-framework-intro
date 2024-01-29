@@ -1,4 +1,6 @@
-﻿namespace exercise.webapi.Models
+﻿using System.Text.Json.Serialization;
+
+namespace exercise.webapi.Models
 {
     public class Author
     {
@@ -7,6 +9,7 @@
         public string LastName { get; set; }
         public string Email { get; set; }
 
+        [JsonIgnore] // Todo: replace this with DTO approach
         public ICollection<Book> Books { get; set; } = new List<Book>();
     }
 }

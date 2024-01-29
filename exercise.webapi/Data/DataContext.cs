@@ -12,6 +12,12 @@ namespace exercise.webapi.Data
         {
 
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseInMemoryDatabase("Library");
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             Seeder seeder = new Seeder();
