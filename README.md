@@ -26,4 +26,8 @@ Extensions (each one is one extension, implement at least one):
 - Add endpoints for assigning / removing an author from a Book
 - Users of the library want to be able to checkout books for a period of time. Add a model to capture which books have been checked out. Include the checkout date and expected return date. Create a checkout api where you can try to checkout a book. You cannot check out books that are currently already borrowed. Add api routes for displaying books that are currently checked out, books that are overdue (should have been returned but are not returned). When you checkout a book, return the expected date for the return (2 weeks). To achieve this, you may want to look at query parameters for the filtering of the checked out books `?filter=someValue`.
 
+Super Extensions (for the brave!)
+
+- Introduce the ability for Users to submit Book Reviews, which consist of a 5 star rating and comment on their view of the book.  Users can submit these reviews anonymously or leave their email address.
+- Implement both a generic IRepository<T> AND Repository<T>. Before you commit to this ensure that you understand the implications of the DbSet Include method on the generic repository! 
 
