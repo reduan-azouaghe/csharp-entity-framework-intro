@@ -13,18 +13,23 @@
 */**/bin/Debug   
 */**/bin/Release   
 */**/obj/Debug   
-
+*/Migrations
 */**/obj/Release   
 /workshop.wwwapi/appsettings.json
 /workshop.wwwapi/appsettings.Development.json
 ```
 
 
-## Dependencies Installed
+## Dependencies 
+
+Some of these have already been installed:
+
 - Install-Package Scalar.AspNetCore
     - provides a /scalar endpoint 
 - Install-Package Swashbuckle.AspNetCore
     - provides a /swagger endpoint
+    
+- Install-Package Microsoft.EntityFrameworkCore
 - Install-Package Microsoft.EntityFrameworkCore.Design
 - Install-Package Microsoft.EntityFrameworkCore.InMemory
 
