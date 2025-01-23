@@ -4,6 +4,29 @@
 2. Clone your fork to your machine
 3. Open the ef.intro.sln in Visual Studio
 
+## Setup
+
+
+
+- Note the .gitignore file in the root of the project which prevents the build directories being uploaded:
+```
+*/**/bin/Debug   
+*/**/bin/Release   
+*/**/obj/Debug   
+
+*/**/obj/Release   
+/workshop.wwwapi/appsettings.json
+/workshop.wwwapi/appsettings.Development.json
+```
+
+
+## Dependencies Installed
+- Install-Package Scalar.AspNetCore
+    - provides a /scalar endpoint 
+- Install-Package Swashbuckle.AspNetCore
+    - provides a /swagger endpoint
+- Install-Package Microsoft.EntityFrameworkCore.Design
+- Install-Package Microsoft.EntityFrameworkCore.InMemory
 
 ## Core and Extension are combined into the following requirements
 
@@ -25,9 +48,28 @@ Extensions (each one is one extension, implement at least one):
 - Update the model to have many to many relation between Book and Author, where a Book can have 1 or more authors. Update all the endpoints to return the Book + Authors list.
 - Add endpoints for assigning / removing an author from a Book
 - Users of the library want to be able to checkout books for a period of time. Add a model to capture which books have been checked out. Include the checkout date and expected return date. Create a checkout api where you can try to checkout a book. You cannot check out books that are currently already borrowed. Add api routes for displaying books that are currently checked out, books that are overdue (should have been returned but are not returned). When you checkout a book, return the expected date for the return (2 weeks). To achieve this, you may want to look at query parameters for the filtering of the checked out books `?filter=someValue`.
+- Swap out he InMemory db for another Postgres instance such as [neon](https://neon.tech/). Make sure you have ```appsettings.json``` AND ```appsettings.Development.json``` files in the root of the workshop.wwwapi project which contains suitable credentials. You may modify the seeding process if you need to.
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+
+  "ConnectionStrings": {
+    "DefaultConnectionString": "Host=HOST; Database=DATABASE; Username=USERNAME; Password=PASSWORD;"
+
+  }
+} 
+
+```
 
 Super Extensions (for the brave!)
 
 - Introduce the ability for Users to submit Book Reviews, which consist of a 5 star rating and comment on their view of the book.  Users can submit these reviews anonymously or leave their email address.
 - Implement both a generic IRepository<T> AND Repository<T>. Before you commit to this ensure that you understand the implications of the DbSet Include method on the generic repository! 
+
 
